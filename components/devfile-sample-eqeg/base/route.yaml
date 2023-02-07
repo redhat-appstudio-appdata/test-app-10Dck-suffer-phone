@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-eqeg
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-eqeg
+    app.kubernetes.io/part-of: test-app
+  name: devfile-sample-eqeg
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-eqeg
+    weight: 100
+status: {}
