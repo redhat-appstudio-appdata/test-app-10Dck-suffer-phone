@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: mysql-robot-shop-kp3l
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: mysql-robot-shop-kp3l
+    app.kubernetes.io/part-of: test-app
+  name: mysql-robot-shop-kp3l
+  namespace: srevivo-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: mysql-robot-shop-kp3l
+status:
+  loadBalancer: {}

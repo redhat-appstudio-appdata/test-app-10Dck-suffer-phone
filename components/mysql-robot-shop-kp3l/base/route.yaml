@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: mysql-robot-shop-kp3l
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: mysql-robot-shop-kp3l
+    app.kubernetes.io/part-of: test-app
+  name: mysql-robot-shop-kp3l
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: mysql-robot-shop-kp3l
+    weight: 100
+status: {}
