@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: fluentd-robot-shop-08wl
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: fluentd-robot-shop-08wl
+    app.kubernetes.io/part-of: test-app
+  name: fluentd-robot-shop-08wl
+  namespace: srevivo-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: fluentd-robot-shop-08wl
+status:
+  loadBalancer: {}

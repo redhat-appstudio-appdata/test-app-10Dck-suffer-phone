@@ -1,0 +1,15 @@
+apiVersion: pipelinesascode.tekton.dev/v1alpha1
+kind: Repository
+metadata:
+  annotations:
+    appstudio.openshift.io/application: test-app
+    appstudio.openshift.io/component: fluentd-robot-shop-08wl
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: fluentd-robot-shop-08wl
+  namespace: srevivo-tenant
+spec:
+  url: https://github.com/shairevivo/robot-shop
